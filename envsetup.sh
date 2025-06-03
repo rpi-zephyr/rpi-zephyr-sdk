@@ -67,6 +67,7 @@ pip_install west
 if [[ ! -d "${script_path}/${zephyr_rtos}" ]]; then
     rm -rf ${script_path}/.west
     west init -m ${MANIFEST_URL}
+    west update
     west zephyr-export
     pip install -r zephyr/scripts/requirements.txt
 fi
